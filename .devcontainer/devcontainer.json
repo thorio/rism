@@ -1,0 +1,23 @@
+{
+	"name": "rism",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"shardulm94.trailing-spaces",
+				"tauri-apps.tauri-vscode"
+			]
+		}
+	},
+	"onCreateCommand": "cargo install --debug tauri-cli",
+	"remoteEnv": {
+		"XAUTHORITY": "/tmp/.Xauthority",
+		"DISPLAY": "${localEnv:DISPLAY:}"
+	},
+	"runArgs": [
+		"--net", "host",
+		"-v", "${localEnv:XAUTHORITY:$HOME/.Xauthority}:/tmp/.Xauthority:ro"
+	]
+}
