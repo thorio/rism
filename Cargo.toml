@@ -8,9 +8,7 @@ edition = "2021"
 rust-version = "1.60"
 
 [dependencies]
-clap = { version = "4.5.0", features = ["derive"] }
-log = "0.4.20"
-stderrlog = "0.6.0"
+clap = { version = "4.5.1", features = ["derive"] }
 tauri = { version = "1.5.4", features = [] }
 url = "2.5.0"
 
