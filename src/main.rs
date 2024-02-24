@@ -18,7 +18,10 @@ fn main() {
 
 	let window = ctx.config_mut().tauri.windows.first_mut().unwrap();
 
-	window.url = WindowUrl::External(args.url);
+	if let Some(url) = args.url {
+		window.url = WindowUrl::External(url);
+	}
+
 	window.title = args.title;
 	window.decorations = !args.no_decorate;
 	window.transparent = args.transparent;

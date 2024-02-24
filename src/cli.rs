@@ -7,7 +7,7 @@ use url::Url;
 pub struct Args {
 	/// URL to navigate to on startup
 	#[arg()]
-	pub url: Url,
+	pub url: Option<Url>,
 
 	#[arg(long, short, default_value = "rism")]
 	pub title: String,
