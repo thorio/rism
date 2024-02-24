@@ -2234,6 +2234,7 @@ dependencies = [
  "tauri",
  "tauri-build",
  "url",
+ "winapi",
 ]
 
 [[package]]

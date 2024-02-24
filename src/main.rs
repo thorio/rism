@@ -5,7 +5,13 @@ use tauri::WindowUrl;
 
 mod cli;
 
+#[cfg(windows)]
+mod windows_console;
+
 fn main() {
+	#[cfg(windows)]
+	windows_console::attach();
+
 	let args = cli::Args::parse();
 
 	let mut ctx = tauri::generate_context!();
@@ -22,4 +28,7 @@ fn main() {
 	tauri::Builder::default()
 		.run(ctx)
 		.expect("error while running tauri application");
+
+	#[cfg(windows)]
+	windows_console::detach();
 }
