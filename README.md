@@ -7,7 +7,7 @@
 ![usage example](./images/example.png)
 
 rism is a minimalistic single-page browser based on tauri, using your platform's native webview.  
-It accepts some CLI arguments and displays a URL, that's about it. You can use it to window-ify any website, allowing it to live outside your browser. rism also supports setting a custom title, which allows it to easily be matched by window managers.
+It accepts some CLI arguments and displays a web page, that's about it. You can use it to window-ify any website, allowing it to live outside your browser. rism also supports setting a custom title, which allows it to easily be matched by window managers.
 
 This project is considered feature-complete.
 
@@ -26,10 +26,12 @@ Binaries are available for the following x86-64 platforms:
 | --- | --- | --- |
 | Arch | [AUR][arch-aur] | |
 | Debian | [Package][debian-deb] | |
+| Linux | [Appimage][linux-appimage] | |
 | Windows | [Portable][windows-exe] | [Installer][windows-msi] |
 
 [arch-aur]: https://aur.archlinux.org/packages/rism-bin
 [debian-deb]: https://github.com/thorio/rism/releases/latest/download/rism-x86_64.deb
+[linux-appimage]: https://github.com/thorio/rism/releases/latest/download/rism-x86_64.AppImage
 [windows-exe]: https://github.com/thorio/rism/releases/latest/download/rism-x86_64.exe
 [windows-msi]: https://github.com/thorio/rism/releases/latest/download/rism-x86_64.msi
 
