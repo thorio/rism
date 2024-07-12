@@ -25,5 +25,7 @@ tauri-build = { version = "1.5.1", features = [] }
 custom-protocol = [ "tauri/custom-protocol" ]
 
 [profile.release]
+panic = "abort"
+opt-level = "s"
 strip = true
 lto = true
