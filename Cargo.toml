@@ -1,6 +1,6 @@
 [package]
 name = "rism"
-version = "0.0.0"
+version = "0.0.0-dev"
 description = "Application-specific browser based on tauri"
 authors = ["thorou"]
 license = "GPL-3.0"
@@ -8,20 +8,14 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.9", features = ["derive"] }
-tauri = { version = "1.7.1", features = [] }
+tauri = { version = "2.1.0", features = [] }
 url = "2.5.2"
 
 [target.'cfg(windows)'.dependencies]
 winapi = { version = "0.3.9", features = ["wincon"] }
 
 [build-dependencies]
-tauri-build = { version = "1.5.3", features = [] }
-
-[features]
-# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
-# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
-# DO NOT REMOVE!!
-custom-protocol = [ "tauri/custom-protocol" ]
+tauri-build = { version = "2.0.2", features = [] }
 
 [profile.release]
 panic = "abort"

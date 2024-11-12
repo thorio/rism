@@ -1,7 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use clap::Parser;
-use tauri::WindowUrl;
+use tauri::WebviewUrl;
 
 mod cli;
 
@@ -16,10 +16,10 @@ fn main() {
 
 	let mut ctx = tauri::generate_context!();
 
-	let window = ctx.config_mut().tauri.windows.first_mut().unwrap();
+	let window = ctx.config_mut().app.windows.first_mut().unwrap();
 
 	if let Some(url) = args.url {
-		window.url = WindowUrl::External(url);
+		window.url = WebviewUrl::External(url);
 	}
 
 	window.title = args.title;
