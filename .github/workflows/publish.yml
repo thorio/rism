@@ -58,8 +58,8 @@ jobs:
         shell: bash
         run: |
           tag=$(echo ${{ github.ref }} | grep -Po '(?<=^refs/tags/v).*')
-          version=$tag+${GITHUB_SHA:0:8}
-          sed -i "0,/version/{s/0.0.0/$version/}" Cargo.toml
+          version=$tag # +${GITHUB_SHA:0:8} # msi bundler issue https://github.com/tauri-apps/tauri/issues/8038
+          sed -i "0,/version/{s/0.0.0-dev/$version/}" Cargo.toml
           echo $version
 
       - name: compile binary
